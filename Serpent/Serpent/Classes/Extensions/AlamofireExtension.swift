@@ -54,7 +54,9 @@ public extension Parser {
      The default unwrapper. Default implementation just passes data straight through. 
      */
     
-    public static var defaultUnwrapper: Unwrapper = { $0.0 }
+    public static var defaultUnwrapper: Unwrapper = {(source: NSDictionary, expectedType: Any) in
+        return (source, expectedType)
+    }
 }
 
 
